@@ -1,0 +1,98 @@
+:root {
+  --bg: #ffffff;
+  --text: #111111;
+  --card: #f0f0f0;
+  --border: #ccc;
+}
+
+body.dark {
+  --bg: #121212;
+  --text: #eeeeee;
+  --card: #1e1e1e;
+  --border: #444;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 2rem;
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#theme-toggle {
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+#task-form {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr auto;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+#task-form input,
+#task-form select,
+#task-form button {
+  padding: 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  background: var(--card);
+  color: var(--text);
+}
+
+.filters {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--card);
+}
+
+th, td {
+  padding: 0.75rem;
+  border: 1px solid var(--border);
+  text-align: left;
+}
+
+.priority-low { color: green; }
+.priority-medium { color: orange; }
+.priority-high { color: red; }
+
+button {
+  padding: 4px 8px;
+  margin: 0 2px;
+  border: none;
+  cursor: pointer;
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+@media (max-width: 600px) {
+  #task-form {
+    grid-template-columns: 1fr;
+  }
+}
